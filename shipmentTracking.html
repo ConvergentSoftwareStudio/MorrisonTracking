@@ -14,13 +14,12 @@
         var currentShipmentMilestones = [];
 
         myApp.controller("MyCtrl", function ($scope) {
-<<<<<<< HEAD
             $scope.Milestones = milestones;
             $scope.CurrentShipmentMilestones = currentShipmentMilestones;
 
             // I have not yet updated the shipments to use awb's
             $scope.Shipments = shipments;
-            $scope.ShipmentColumnDefinitions = [{ field: 'AWB', displayName : 'AWB' }, {field: 'shipper', displayName: 'Shipper' },
+            $scope.ShipmentColumnDefinitions = [{ field: 'AWB', displayName: 'AWB' }, { field: 'shipper', displayName: 'Shipper' },
                                         { field: 'consignee', displayName: 'Consignee' }];
 
             $scope.MilestoneColumnDefinitions = [{ field: 'MilestoneType', displayName: 'Milestone Type' },
@@ -31,18 +30,6 @@
             $scope.shipmentOptions = {
                 data: 'Shipments',
                 columnDefs: 'ShipmentColumnDefinitions',
-=======
-            $scope.myData = [{ shipper: "Shanghai Auto Parts Mfg, No. 348, Yuanqu Road, Anting Town, Jiading Dist., Shanghai, China (Mainland)", consignee: "ABC Co., Los Angeles, CA", airWaybill: 089-6934265-5, shipmentDate: 02/04/2015, arrivalDate: 02/12/2015},
-                            { shipper: "Happy Trading CA, 27 Shaughnesey St., Vancouver, BC, Canada", consignee: "Happy Trading USA, 200 West Grand Ave., Woodstock, WI", airWaybill: 014-3218614-4, shipmentDate: 02/05/2015, arrivalDate: 02/09/2015},
-                            { shipper: "Ideal Systems, 2/F, Tower Two, 88 Container Port Road, HK", consignee: "Apple, 1 Infinite Loop, Cupertino, CA", airWaybill: 043-2139573-4, shipmentDate: 02/07/2015, arrivalDate: 02/13/2015},
-                            { shipper: "IO Supply Company, 63 Renmin Lu, Qingdao Shi, 266033 Shandong, China", consignee: "McDonald's, 2111 McDonald's Dr., Oak Brook, IL 60523", airWaybill: 089-0347293-4, shipmentDate: 02/13/2015, arrivalDate: 02/20/2015},
-                            { shipper: "ABI Global, Inc., Urion 30, Puerto Juarez, 02860 Mexico, D.F., Mexico", consignee: "Amazon Com, 410 Terry Avenue North, Seattle, WA 98109", airWaybill: 078-3751392-4, shipmentDate: 02/13/2015, arrivalDate: 02/18/2015}];
-            $scope.myColumnDefs = [{ field: 'shipper', displayName: 'Shipper' },
-                                        { field: 'consignee', displayName: 'Consignee'}];
-            $scope.myOptions = {
-                data: 'myData',
-                columnDefs: 'myColumnDefs',
->>>>>>> origin/master
                 selectedItems: [],
                 multiSelect: false,
                 rowTemplate: '<div ng-style="{ \'background-color\' : getColorCoding(row.entity) }" >' +
@@ -68,15 +55,15 @@
                 $scope.CurrentShipmentMilestones = [];
 
                 for (var i = 0; i < $scope.Milestones.length; i++) {
-                    if ($scope.Milestones[i].AWB == selectedShipment.AWB ) {
+                    if ($scope.Milestones[i].AWB == selectedShipment.AWB) {
                         // display milestones in grid on the right side, if 'Date Completed' is not empty
                         //if ($scope.Milestones[i].DateCompleted != "")
-                            $scope.CurrentShipmentMilestones.push($scope.Milestones[i]);
+                        $scope.CurrentShipmentMilestones.push($scope.Milestones[i]);
                     }
                 }
             }
 
-            $scope.getColorCoding = function(row) {
+            $scope.getColorCoding = function (row) {
                 var dateDue, dateCompleted, color = "green";
 
                 for (var i = 0; i < $scope.Milestones.length; i++) {
@@ -96,7 +83,7 @@
                 }
                 return color;
             }
-   
+
         });
     </script>
 
@@ -108,7 +95,7 @@
             width: 450px;
             height: 300px;
         }
-     </style>
+    </style>
 </head>
 <body ng-app="myApp">
     <div ng-controller="MyCtrl">
