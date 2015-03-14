@@ -5,10 +5,11 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
     <script src="http://underscorejs.org/underscore-min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
 
     <script>
         var morrisonApp = angular.module("morrisonApp", ['ngGrid']);
+        var currentDate = new Date("03/06/2015");
 
         morrisonApp.controller("indexController", function ($scope) {
             $scope.hideTabsExcept = function (tabIndex, tabCount) {
@@ -34,7 +35,7 @@
             font-family: helvetica;
             font-size: small;
             border: 1px solid rgb(212,212,212);
-            width: 450px;
+            width: 500px;
             height: 300px;
         }
     </style>
@@ -50,12 +51,12 @@
             <div class="verticalTabFiller" style="height: 398px"></div>
         </div>
         <div style="display: inline-block; float: left;">
-            <div class="verticalTabPanel" ng-show="tabs[0]" style="width: 700px; height: 500px">
+            <div class="verticalTabPanel" ng-show="tabs[0]" style="width: 800px; height: 500px">
                 <div ng-include="'dashboard.html'"></div>
             </div>
 
-            <div class="verticalTabPanel" ng-show="tabs[1]" style="width: 700px; height: 500px">Freight</div>
-            <div class="verticalTabPanel" ng-show="tabs[2]" style="width: 700px; height: 500px">3PL/WMS</div>
+            <div class="verticalTabPanel" ng-show="tabs[1]" style="width: 800px; height: 500px">Freight</div>
+            <div class="verticalTabPanel" ng-show="tabs[2]" style="width: 800px; height: 500px">3PL/WMS</div>
         </div>
     </div>
 </body>
