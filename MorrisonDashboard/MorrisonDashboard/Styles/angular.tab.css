@@ -74,6 +74,13 @@ border-right: solid 1px transparent;
 border-bottom: solid 1px black;
 }
 
+.horizontalTabFiller
+{
+border-bottom: solid 1px black;
+display: inline-block;
+height: 31px;
+float: left;
+}
 
 .horizontalTabSeparator
 {

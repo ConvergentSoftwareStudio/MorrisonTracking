@@ -1,9 +1,26 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
+﻿<div ng-controller="FreightCtrl" style="margin-top: 20px; margin-left: 20px">
+    <div>
+        <div class="horizontalTabFiller" style="width: 10px">&nbsp;</div>
+        <div class="horizontalTab" ng-class="tabClasses[0]" ng-click="hideTabsExcept(0, 4)">Create</div>
+        <div class="horizontalTab" ng-class="tabClasses[1]" ng-click="hideTabsExcept(1, 4)">Track</div>
+        <div class="horizontalTab" ng-class="tabClasses[2]" ng-click="hideTabsExcept(2, 4)">Reporting</div>
+        <div class="horizontalTab" ng-class="tabClasses[3]" ng-click="hideTabsExcept(3, 4)">Accounting</div>
+        <div class="horizontalTabFiller" style="width: 364px"></div>
+    </div>
+    <div>
+        <div class="horizontalTabPanel" ng-show="tabs[0]" style="width: 700px; height: 400px">
+            <div ng-include="'create.html'"></div>
+        </div>
 
-</body>
-</html>
+        <div class="horizontalTabPanel" ng-show="tabs[1]" style="width: 700px; height: 400px">
+            <div ng-include="'track.html'"></div>
+        </div>
+        <div class="horizontalTabPanel" ng-show="tabs[2]" style="width: 700px; height: 400px">
+            <div ng-include="'reporting.html'"></div>
+        </div>
+
+        <div class="horizontalTabPanel" ng-show="tabs[3]" style="width: 700px; height: 400px">
+            <div ng-include="'accounting.html'"></div>
+        </div>
+    </div>
+</div>

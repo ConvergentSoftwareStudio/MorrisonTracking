@@ -28,6 +28,7 @@
     <script src="Scripts/milestoneData.js"></script>
     <script src="Scripts/recentDeliveriesData.js"></script>
     <script src="Scripts/recentDeliveriesCtrl.js"></script>
+    <script src="Scripts/freightCtrl.js"></script>
 
     <link rel="stylesheet" href="Styles/angular.tab.css" />
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.css" />
@@ -52,12 +53,18 @@
             <div class="verticalTabFiller" style="height: 398px"></div>
         </div>
         <div style="display: inline-block; float: left;">
+
             <div class="verticalTabPanel" ng-show="tabs[0]" style="width: 800px; height: 500px">
                 <div ng-include="'dashboard.html'"></div>
             </div>
 
-            <div class="verticalTabPanel" ng-show="tabs[1]" style="width: 800px; height: 500px">Freight</div>
-            <div class="verticalTabPanel" ng-show="tabs[2]" style="width: 800px; height: 500px">3PL/WMS</div>
+            <div class="verticalTabPanel" ng-show="tabs[1]" style="width: 800px; height: 500px">
+                <div ng-include="'freight.html'"></div>
+            </div>
+
+            <div class="verticalTabPanel" ng-show="tabs[2]" style="width: 800px; height: 500px">
+                3PL/WMS tab contents go here.
+            </div>
         </div>
     </div>
 </body>
