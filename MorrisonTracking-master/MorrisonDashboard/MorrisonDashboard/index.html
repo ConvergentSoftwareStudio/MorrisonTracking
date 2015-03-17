@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html>
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
+
+    <script>
+        var morrisonApp = angular.module("morrisonApp", ['ngGrid']);
+
+        morrisonApp.controller("indexController", function ($scope) {
+            $scope.hideTabsExcept = function (tabIndex, tabCount) {
+                $scope.tabClasses = _.range(tabCount).map(function () { return 'verticalUnselectedTab' });
+                $scope.tabs = _.range(tabCount).map(function () { return false });
+
+                $scope.tabs[tabIndex] = true;
+                $scope.tabClasses[tabIndex] = "verticalSelectedTab";
+            }
+            $scope.hideTabsExcept(0, 3);
+        });
+    </script>
+
+    <script src="Scripts/inTransitData.js"></script>
+    <script src="Scripts/inTransitCtrl.js"></script>
+    <script src="Scripts/milestones.js"></script>
+
+    <link rel="stylesheet" href="Styles/angular.tab.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.css" />
+
+    <style>
+        .gridStyle {
+            font-family: helvetica;
+            font-size: small;
+            border: 1px solid rgb(212,212,212);
+            width: 450px;
+            height: 300px;
+        }
+    </style>
+
+</head>
+<body ng-app="morrisonApp">
+    <div ng-controller="indexController">
+        <div style="display: inline-block; float: left;">
+            <div class="verticalTabFiller" style="height: 10px">&nbsp;</div>
+            <div class="verticalTab" ng-class="tabClasses[0]" ng-click="hideTabsExcept(0, 3)">Dashboard</div>
+            <div class="verticalTab" ng-class="tabClasses[1]" ng-click="hideTabsExcept(1, 3)">Freight</div>
+            <div class="verticalTab" ng-class="tabClasses[2]" ng-click="hideTabsExcept(2, 3)">3PL/WMS</div>
+            <div class="verticalTabFiller" style="height: 398px"></div>
+        </div>
+        <div style="display: inline-block; float: left;">
+            <div class="verticalTabPanel" ng-show="tabs[0]" style="width: 700px; height: 500px">
+                <div ng-include="'dashboard.html'"></div>
+            </div>
+
+            <div class="verticalTabPanel" ng-show="tabs[1]" style="width: 700px; height: 500px">Freight</div>
+            <div class="verticalTabPanel" ng-show="tabs[2]" style="width: 700px; height: 500px">3PL/WMS</div>
+        </div>
+    </div>
+</body>
+</html>
