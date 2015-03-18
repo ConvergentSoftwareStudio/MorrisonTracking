@@ -1,0 +1,3 @@
+﻿var shipperData = { name: "Test Shipper", addr1: "Test Address 1", addr2: "Test Address 2", city: "Test City", region: "Test Region", postalCode: "Test Postal Code" };
+var consigneeData = { name: "Test Consignee", addr1: "Test Address 1", addr2: "Test Address 2", city: "Test City", region: "Test Region", postalCode: "Test Postal Code" };
+var billToData = { name: "Test Bill To", addr1: "Test Address 1", addr2: "Test Address 2", city: "Test City", region: "Test Region", postalCode: "Test Postal Code" };

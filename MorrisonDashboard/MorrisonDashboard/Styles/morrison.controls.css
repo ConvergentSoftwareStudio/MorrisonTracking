@@ -1,0 +1,39 @@
+﻿     .smallGrid {
+            font-family: helvetica;
+            font-size: x-small;
+            width: 400px;
+            height: 250px;
+        }
+          .mediumGrid {
+            font-family: helvetica;
+            font-size: x-small;
+            width: 600px;
+            height: 350px;
+        }
+               .largeGrid {
+            font-family: helvetica;
+            font-size: x-small;
+            width: 800px;
+            height: 450px;
+        }
+        .label
+        {
+            text-align: right;
+        }
+ 
+        .textbox
+        {
+            width: 100px;
+        }
+        .panel
+        {
+            display: inline-block;
+            width: 200px;
+        }
+        .button
+        {
+            width: 150px;
+            border-radius: 5px;
+            background-color: lightblue;
+            color: blue;
+        }

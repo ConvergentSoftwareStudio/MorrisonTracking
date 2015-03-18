@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html>
+<head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
+
+    <script>
+        var morrisonApp = angular.module("morrisonApp", ['ngGrid']);
+        var currentDate = new Date("03/06/2015");
+    </script>
+
+    <script src="Scripts/freightTabsCtrl.js" type="text/javascript"></script>
+    <script src="Scripts/indexTabsCtrl.js" type="text/javascript"></script>
+    <script src="Scripts/inTransitGridData.js" type="text/javascript"></script>
+    <script src="Scripts/inTransitGridCtrl.js" type="text/javascript"></script>
+    <script src="Scripts/milestoneData.js" type="text/javascript"></script>
+    <script src="Scripts/partyData.js" type="text/javascript"></script>
+    <script src="Scripts/partyCtrl.js" type="text/javascript"></script>
+
+    <script src="Scripts/recentDeliveriesGridData.js" type="text/javascript"></script>
+    <script src="Scripts/recentDeliveriesGridCtrl.js" type="text/javascript"></script>
+    <script src="Scripts/shipmentDetailTabsCtrl.js" type="text/javascript"></script>
+    <script src="Scripts/shipmentGridData.js" type="text/javascript"></script>
+    <script src="Scripts/shipmentGridCtrl.js" type="text/javascript"></script>
+    <script src="Scripts/usageGridData.js" type="text/javascript"></script>
+    <script src="Scripts/usageGridCtrl.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="Styles/morrison.tab.css" />
+    <link rel="stylesheet" href="Styles/morrison.controls.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.css" />
+
+</head>
+<body ng-app="morrisonApp">
+    <div ng-controller="ShipmentGridCtrl">
+        <div class="mediumGrid" ng-grid="shipmentGrid">
+        </div>
+    </div>
+</body>
+</html>

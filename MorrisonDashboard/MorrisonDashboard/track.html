@@ -1,0 +1,45 @@
+﻿<h3>Shipment Search</h3>
+<table>
+    <tr>
+        <td class="label">Waybill:</td>
+        <td>
+            <input class="textbox" id="txtWaybill" />
+        </td>
+        <td class="label">Ship Date:</td>
+        <td>
+            <input class="textbox" id="txtShipDate" />
+        </td>
+        <td class="label">Any reference or Serial Number:</td>
+        <td>
+            <input class="textbox" id="txtReference" />
+        </td>
+    </tr>
+      <tr>
+        <td class="label">Origin:</td>
+        <td>
+            <input class="textbox" id="txtOrigin" />
+        </td>
+          <td class="label">Due Date:</td>
+        <td>
+            <input class="textbox" id="txtDueDate" />
+        </td>
+          <td></td>
+          <td>
+              <input type="button" value="Search" />
+          </td>
+    </tr>    
+    <tr>
+        <td class="label">Destination:</td>
+        <td>
+            <input class="textbox" id="txtDestination" />
+        </td>
+        <td class="label">Status:</td>
+        <td>
+            <input class="textbox" id="txtStatus" />
+        </td>
+    </tr>    
+ </table>
+<div ng-controller="ShipmentGridCtrl">
+    <div class="mediumGrid" ng-grid="shipmentGrid">
+    </div>
+</div>
