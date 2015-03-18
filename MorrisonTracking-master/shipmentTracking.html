@@ -1,0 +1,175 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
+    <script>
+
+        // fake milestone data... today is 3/6/2015
+        var milestones = [
+                                    { AWB: "089-6934265-5", MilestoneType: "Pickup", DateDue: "03/02/2015", DateCompleted: "03/02/2015" },
+                                    { AWB: "089-6934265-5", MilestoneType: "Origin Scan", DateDue: "03/04/2015", DateCompleted: "03/04/2015" },
+                                    { AWB: "089-6934265-5", MilestoneType: "Origin Shipped", DateDue: "03/06/2015", DateCompleted: "" },
+                                    { AWB: "089-6934265-5", MilestoneType: "Destination Arrival", DateDue: "03/06/2015", DateCompleted: "" },
+                                    { AWB: "089-6934265-5", MilestoneType: "Out for Delivery", DateDue: "03/07/2015", DateCompleted: "" },
+                                    { AWB: "089-6934265-5", MilestoneType: "Proof of Delivery", DateDue: "03/07/2015", DateCompleted: "" },
+
+                                    { AWB: "014-3218614-4", MilestoneType: "Pickup", DateDue: "03/04/2015", DateCompleted: "03/04/2015" },
+                                    { AWB: "014-3218614-4", MilestoneType: "Origin Scan", DateDue: "03/04/2015", DateCompleted: "03/04/2015" },
+                                    { AWB: "014-3218614-4", MilestoneType: "Origin Shipped", DateDue: "03/05/2015", DateCompleted: "03/05/2015" },
+                                    { AWB: "014-3218614-4", MilestoneType: "Destination Arrival", DateDue: "03/08/2015", DateCompleted: "" },
+                                    { AWB: "014-3218614-4", MilestoneType: "Out for Delivery", DateDue: "03/09/2015", DateCompleted: "" },
+                                    { AWB: "014-3218614-4", MilestoneType: "Proof of Delivery", DateDue: "03/09/2015", DateCompleted: "" },
+
+                                    { AWB: "043-2139573-4", MilestoneType: "Pickup", DateDue: "03/04/2015", DateCompleted: "03/04/2015" },
+                                    { AWB: "043-2139573-4", MilestoneType: "Origin Scan", DateDue: "03/04/2015", DateCompleted: "03/04/2015" },
+                                    { AWB: "043-2139573-4", MilestoneType: "Origin Shipped", DateDue: "03/05/2015", DateCompleted: "03/05/2015" },
+                                    { AWB: "043-2139573-4", MilestoneType: "Destination Arrival", DateDue: "03/05/2015", DateCompleted: "03/05/2015" },
+                                    { AWB: "043-2139573-4", MilestoneType: "Out for Delivery", DateDue: "03/07/2015", DateCompleted: "" },
+                                    { AWB: "043-2139573-4", MilestoneType: "Proof of Delivery", DateDue: "03/07/2015", DateCompleted: "" },
+
+                                    { AWB: "089-0347293-4", MilestoneType: "Pickup", DateDue: "03/04/2015", DateCompleted: "03/04/2015" },
+                                    { AWB: "089-0347293-4", MilestoneType: "Origin Scan", DateDue: "03/04/2015", DateCompleted: "03/04/2015" },
+                                    { AWB: "089-0347293-4", MilestoneType: "Origin Shipped", DateDue: "03/05/2015", DateCompleted: "03/05/2015" },
+                                    { AWB: "089-0347293-4", MilestoneType: "Destination Arrival", DateDue: "03/05/2015", DateCompleted: "" },
+                                    { AWB: "089-0347293-4", MilestoneType: "Out for Delivery", DateDue: "03/07/2015", DateCompleted: "" },
+                                    { AWB: "089-0347293-4", MilestoneType: "Proof of Delivery", DateDue: "03/07/2015", DateCompleted: "" },
+
+                                    { AWB: "078-3751392-4", MilestoneType: "Pickup", DateDue: "03/03/2015", DateCompleted: "03/04/2015" },
+                                    { AWB: "078-3751392-4", MilestoneType: "Origin Scan", DateDue: "03/04/2015", DateCompleted: "03/04/2015" },
+                                    { AWB: "078-3751392-4", MilestoneType: "Origin Shipped", DateDue: "03/05/2015", DateCompleted: "03/05/2015" },
+                                    { AWB: "078-3751392-4", MilestoneType: "Destination Arrival", DateDue: "03/06/2015", DateCompleted: "03/06/2015" },
+                                    { AWB: "078-3751392-4", MilestoneType: "Out for Delivery", DateDue: "03/07/2015", DateCompleted: "" },
+                                    { AWB: "078-3751392-4", MilestoneType: "Proof of Delivery", DateDue: "03/07/2015", DateCompleted: "" }
+        ];
+
+        var shipments = [
+        {
+            shipper: "Shanghai Auto Parts Mfg, No. 348, Yuanqu Road, Anting Town, Jiading Dist., Shanghai, China (Mainland)",
+            consignee: "ABC Co., Los Angeles, CA", AWB: "089-6934265-5", shipmentDate: "02 / 04 / 2015", arrivalDate: "02 / 12 / 2015"
+        },
+        {
+            shipper: "Happy Trading CA, 27 Shaughnesey St., Vancouver, BC, Canada",
+            consignee: "Happy Trading USA, 200 West Grand Ave., Woodstock, WI", AWB: "014-3218614-4", shipmentDate: "02 / 05 / 2015", arrivalDate: "02 / 09 / 2015"
+        },
+        {
+            shipper: "Ideal Systems, 2/F, Tower Two, 88 Container Port Road, HK",
+            consignee: "Apple, 1 Infinite Loop, Cupertino, CA", AWB: "043-2139573-4", shipmentDate: "02 / 07 / 2015", arrivalDate: "02 / 13 / 2015"
+        },
+        {
+            shipper: "IO Supply Company, 63 Renmin Lu, Qingdao Shi, 266033 Shandong, China",
+            consignee: "McDonald's, 2111 McDonald's Dr., Oak Brook, IL 60523", AWB: "089-0347293-4", shipmentDate: "02 / 13 / 2015", arrivalDate: "02 / 20 / 2015"
+        },
+        {
+            shipper: "ABI Global, Inc., Urion 30, Puerto Juarez, 02860 Mexico, D.F., Mexico",
+            consignee: "Amazon Com, 410 Terry Avenue North, Seattle, WA 98109", AWB: "078-3751392-4", shipmentDate: "02 / 13 / 2015", arrivalDate: "02 / 18 / 2015"
+        }];
+
+        // define the columns for the two grids
+
+
+        var myApp = angular.module('myApp', ['ngGrid']);
+        // not using this yet, but eventually it will be handy
+        var currentDate = new Date("03/06/2015");
+        // no shipment has been selected on the left side at outset, so we don't show milestones
+        var currentShipmentMilestones = [];
+
+        myApp.controller("MyCtrl", function ($scope) {
+            $scope.Milestones = milestones;
+            $scope.CurrentShipmentMilestones = currentShipmentMilestones;
+
+            // I have not yet updated the shipments to use awb's
+            $scope.Shipments = shipments;
+            $scope.ShipmentColumnDefinitions = [{ field: 'AWB', displayName: 'AWB' }, { field: 'shipper', displayName: 'Shipper' },
+                                        { field: 'consignee', displayName: 'Consignee' }];
+
+            $scope.MilestoneColumnDefinitions = [{ field: 'MilestoneType', displayName: 'Milestone Type' },
+                             { field: 'DateDue', displayName: 'Date Due' }, { field: 'DateCompleted', displayName: 'Date Completed' }];
+
+            // Shipments is the data for the grid (in quotes, which is weird, but that's how AngularJS wants it)
+            // We also provide the column definitions
+            $scope.shipmentOptions = {
+                data: 'Shipments',
+                columnDefs: 'ShipmentColumnDefinitions',
+                selectedItems: [],
+                multiSelect: false,
+                rowTemplate: '<div ng-style="{ \'background-color\' : getColorCoding(row.entity) }" >' +
+                                            '<div ng-style="{ \'cursor\': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell {{col.cellClass}}">' +
+                                                '<div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }">&nbsp;</div>' +
+                                                '<div ng-cell></div>' +
+                                            '</div>' +
+                                      '</div>'
+            }
+
+            // same idea as for shipment grid
+            $scope.milestoneOptions = {
+                data: 'CurrentShipmentMilestones',
+                columnDefs: 'MilestoneColumnDefinitions',
+                selectedItems: [],   // we're not using this array at the present time
+                multiSelect: false
+            }
+
+            // in the div below, you see that we execute this function whenever the shipment grid is clicked
+            $scope.showSelectionMilestones = function () {
+                var selectedShipment = $scope.shipmentOptions.selectedItems[0];
+
+                $scope.CurrentShipmentMilestones = [];
+
+                for (var i = 0; i < $scope.Milestones.length; i++) {
+                    if ($scope.Milestones[i].AWB == selectedShipment.AWB) {
+                        // display milestones in grid on the right side, if 'Date Completed' is not empty
+                        //if ($scope.Milestones[i].DateCompleted != "")
+                        $scope.CurrentShipmentMilestones.push($scope.Milestones[i]);
+                    }
+                }
+            }
+
+            $scope.getColorCoding = function (row) {
+                var dateDue, dateCompleted, color = "green";
+
+                for (var i = 0; i < $scope.Milestones.length; i++) {
+                    if ($scope.Milestones[i].AWB == row.AWB) {
+                        dateDue = new Date($scope.Milestones[i].DateDue);
+                        if ($scope.Milestones[i].DateCompleted == "") {
+                            if (dateDue < currentDate) {
+                                color = "red";
+                            } else {
+                                if (dateDue.getTime() === currentDate.getTime()) {
+                                    color = "yellow";
+                                }
+                            }
+                            break;
+                        }
+                    }
+                }
+                return color;
+            }
+
+        });
+    </script>
+
+    <style>
+        .gridStyle {
+            font-family: helvetica;
+            font-size: small;
+            border: 1px solid rgb(212,212,212);
+            width: 450px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="MyCtrl">
+        <div style="display: inline-block; vertical-align:  top">
+            <div class="gridStyle" ng-grid="shipmentOptions" data-ng-click="showSelectionMilestones()">
+            </div>
+            <!--<pre>{{shipmentOptions.selectedItems}}</pre>-->
+        </div>
+        <div style="display: inline-block; vertical-align:  top">
+            <div class="gridStyle" ng-grid="milestoneOptions">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
