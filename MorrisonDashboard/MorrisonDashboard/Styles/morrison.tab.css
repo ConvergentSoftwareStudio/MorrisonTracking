@@ -29,7 +29,6 @@ border-right: solid 1px black;
 color: black;
 }
 
-
 .verticalTabFiller
 {
 border-right: solid 1px black;
@@ -41,8 +40,6 @@ border-bottom: solid 1px black;
 border-top: solid 1px black;
 border-right: solid 1px black;
 }
-
-
 
 .horizontalTab
 {
@@ -89,7 +86,6 @@ border-bottom: solid 1px black;
 height: 30px;
 float: left;
 }
-
         
 .horizontalTabPanel
 {

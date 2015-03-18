@@ -1,14 +1,14 @@
-﻿morrisonApp.controller("InTransitCtrl", function ($scope) {
-    $scope.InTransitData = inTransitData;
+﻿morrisonApp.controller("InTransitGridCtrl", function ($scope) {
+    $scope.InTransitGridData = inTransitGridData;
     $scope.MilestoneData = milestoneData;
-    $scope.InTransitColumnDefinitions = [{ field: 'AWB', displayName: 'AWB' }, { field: 'shipper', displayName: 'Shipper' },
+    $scope.InTransitGridColumnDefinitions = [{ field: 'AWB', displayName: 'AWB' }, { field: 'shipper', displayName: 'Shipper' },
                                 { field: 'consignee', displayName: 'Consignee' }];
 
     // Shipments is the data for the grid (in quotes, which is weird, but that's how AngularJS wants it)
     // We also provide the column definitions
     $scope.inTransitGrid = {
-        data: 'InTransitData',
-        columnDefs: 'InTransitColumnDefinitions',
+        data: 'InTransitGridData',
+        columnDefs: 'InTransitGridColumnDefinitions',
         selectedItems: [],
         multiSelect: false,
         rowTemplate: '<div ng-style="{ \'background-color\' : getColorCoding(row.entity) }" >' +

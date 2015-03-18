@@ -1,10 +1,16 @@
-﻿<div>
-    <div style="display: inline-block">
-        <div ng-include="'inTransit.html'"></div>
+﻿<div style="display: inline-block">
+    <div ng-controller="InTransitGridCtrl">
+        <div class="smallGrid" ng-grid="inTransitGrid">
+        </div>
     </div>
-
-    <div>
-        <div ng-include="'recentDeliveries.html'"></div>
+    <div ng-controller="RecentDeliveriesGridCtrl">
+        <div class="smallGrid" ng-grid="recentDeliveriesGrid">
+        </div>
     </div>
 </div>
-
+<div style="display: inline-block; vertical-align: top">
+    <div ng-controller="UsageGridCtrl">
+        <div class="smallGrid" ng-grid="usageGrid">
+        </div>
+    </div>
+</div>
