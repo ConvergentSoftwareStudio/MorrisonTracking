@@ -33,9 +33,33 @@
 
 </head>
 <body ng-app="morrisonApp">
-    <div ng-controller="ShipmentGridCtrl">
-        <div class="mediumGrid" ng-grid="shipmentGrid">
+    <div ng-controller="ShipmentDetailTabsCtrl" style="margin-top: 20px; margin-left: 20px">
+        <div>
+            <div class="horizontalTabFiller" style="width: 10px">&nbsp;</div>
+            <div class="horizontalTab" ng-class="tabClasses[0]" ng-click="hideTabsExcept(0, 4)">Details <span class="footnote">Alt+F1</span></div>
+            <div class="horizontalTab" ng-class="tabClasses[1]" ng-click="hideTabsExcept(1, 4)">Reference <span class="footnote">Alt+F2</span></div>
+            <div class="horizontalTab" ng-class="tabClasses[2]" ng-click="hideTabsExcept(2, 4)">Comments <span class="footnote">Alt+F3</span></div>
+            <div class="horizontalTab" ng-class="tabClasses[3]" ng-click="hideTabsExcept(3, 4)">Charges <span class="footnote">Alt+F10</span></div>
+            <div class="horizontalTabFiller" style="width: 434px"></div>
+        </div>
+        <div>
+            <div class="horizontalTabPanel" ng-show="tabs[0]" style="width: 850px; height: 400px">
+                <div ng-include="'details.html'"></div>
+            </div>
+
+            <div class="horizontalTabPanel" ng-show="tabs[1]" style="width: 850px; height: 400px">
+                <div ng-include="'reference.html'"></div>
+            </div>
+
+            <div class="horizontalTabPanel" ng-show="tabs[2]" style="width: 850px; height: 400px">
+                <div ng-include="'comments.html'"></div>
+            </div>
+
+            <div class="horizontalTabPanel" ng-show="tabs[3]" style="width: 850px; height: 400px">
+                <div ng-include="'charges.html'"></div>
+            </div>
         </div>
     </div>
+
 </body>
 </html>

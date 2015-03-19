@@ -1,16 +1,30 @@
-﻿<div style="display: inline-block">
-    <div ng-controller="InTransitGridCtrl">
-        <div class="smallGrid" ng-grid="inTransitGrid">
+﻿<div class="outerPanel">
+<div style="display: inline-block">
+    <fieldset>
+        <legend>In-Transit</legend>
+        <div ng-controller="InTransitGridCtrl">
+            <div class="smallGrid" ng-grid="inTransitGrid">
+            </div>
         </div>
-    </div>
-    <div ng-controller="RecentDeliveriesGridCtrl">
-        <div class="smallGrid" ng-grid="recentDeliveriesGrid">
+    </fieldset>
+
+    <fieldset>
+        <legend>Recent Deliveries</legend>
+        <div ng-controller="RecentDeliveriesGridCtrl">
+            <div class="smallGrid" ng-grid="recentDeliveriesGrid">
+            </div>
         </div>
-    </div>
+    </fieldset>
+
 </div>
 <div style="display: inline-block; vertical-align: top">
-    <div ng-controller="UsageGridCtrl">
-        <div class="smallGrid" ng-grid="usageGrid">
+
+    <fieldset>
+        <legend>Usage</legend>
+        <div ng-controller="UsageGridCtrl">
+            <div class="smallGrid" ng-grid="usageGrid">
+            </div>
         </div>
-    </div>
+    </fieldset>
+</div>
 </div>

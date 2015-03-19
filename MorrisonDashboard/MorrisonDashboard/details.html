@@ -1,13 +1,29 @@
 ﻿<table ng-controller="PartyCtrl">
     <tr>
         <td>
-            <div class="panel" ng-include="'shipperPanel.html'"></div>
+            <div ng-include="'shipperPanel.html'"></div>
         </td>
         <td>
-            <div class="panel" ng-include="'consigneePanel.html'"></div>
+            <div ng-include="'consigneePanel.html'"></div>
         </td>
         <td>
-            <div class="panel" ng-include="'billToPanel.html'"></div>
+            <div ng-include="'billToPanel.html'"></div>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="2">
+            <div ng-include="'physicalFreight.html'"></div>
+        </td>
+        <td>
+            <fieldset><legend>Current Status</legend></fieldset>
+        </td>
+        <td>
+            <fieldset><legend>Remarks</legend></fieldset>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div ng-include="'masterWaybills.html'"></div>
         </td>
     </tr>
 </table>
