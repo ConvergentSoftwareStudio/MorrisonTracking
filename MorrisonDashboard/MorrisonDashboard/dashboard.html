@@ -20,6 +20,13 @@
 <div style="display: inline-block; vertical-align: top">
 
     <fieldset>
+        <legend>In/Out</legend>
+        <div ng-controller="InOutCtrl">
+            <div class="grid" style="width: 400px; height: 150px" ng-grid="inOutGrid">
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
         <legend>Usage</legend>
         <div ng-controller="UsageGridCtrl">
             <div class="grid" style="width: 400px; height: 150px" ng-grid="usageGrid">
