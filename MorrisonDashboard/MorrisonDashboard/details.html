@@ -10,20 +10,33 @@
             <div ng-include="'billToPanel.html'"></div>
         </td>
     </tr>
-    <tr>
+</table>
+<table>
+    <tr valign="top">
         <td rowspan="2">
-            <div ng-include="'physicalFreight.html'"></div>
+            <fieldset>
+                <legend>Physical Freight</legend>
+                <div ng-include="'physicalFreight.html'"></div>
+            </fieldset>
         </td>
         <td>
-            <fieldset><legend>Current Status</legend></fieldset>
+            <fieldset><legend>Current Status</legend>
+                <span class="link">DELIVERED (OR END OF RESPONSIBILITY)</span><br />
+                <button value="Display Hard Copy POD"></button>
+            </fieldset>
         </td>
         <td>
-            <fieldset><legend>Remarks</legend></fieldset>
+            <fieldset>
+                <legend>Remarks</legend>
+                <textarea cols="30" rows="3"></textarea>
+            </fieldset>
         </td>
     </tr>
     <tr>
-        <td>
-            <div ng-include="'masterWaybills.html'"></div>
+        <td colspan="2">
+            <fieldset><legend>Master Waybills</legend>
+                <div ng-include="'masterWaybills.html'"></div>
+            </fieldset>
         </td>
     </tr>
 </table>
