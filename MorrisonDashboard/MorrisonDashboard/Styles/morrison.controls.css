@@ -1,7 +1,15 @@
-﻿     .grid 
+    .grid 
     {
         font-family: helvetica;
         font-size: x-small;
+    }
+    
+    .newUserGrid {
+    	font-size: small;
+    	width: 768px;
+    	height: 200px;
+    	margin: 0 auto;
+    	margin-top: 50px;
     }
     
     .label
@@ -45,3 +53,47 @@
     {
         padding: 10px;
     }
+    
+   	.header {
+		margin-left: 70px;
+	}
+		
+	.form-inline {
+		margin: 40px 0 0 70px;
+	}
+		
+	#userEmail {
+		margin-right: 25px;
+	}
+		
+	.input {
+		width: 200px;
+		margin-left: 10px;
+	} 
+	
+.ngTopPanel {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid #d4d4d4;
+}
+	
+.ngHeaderCell {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: inherit;
+}
+
+.ngHeaderButton {
+  position: absolute;
+  right: 2px;
+  top: 8px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  z-index: 1;
+  background-color: #9fbbb4;
+  cursor: pointer;
+}
