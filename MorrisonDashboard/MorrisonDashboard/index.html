@@ -39,9 +39,12 @@
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.css" />
     <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.3.12/css/ngDialog-theme-default.css" />-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.3.12/css/ngDialog.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    
 </head>
 <body ng-app="morrisonApp">
-    <h2>Morrison Express Tracking</h2>
+	<div class="container">
+    <h2 id="morrisonExpressHeader">Morrison Express Tracking</h2>
     <div ng-controller="IndexTabsCtrl">
         <div style="display: inline-block; float: left;">
             <div class="verticalTabFiller" style="height: 10px">&nbsp;</div>
@@ -64,6 +67,7 @@
                 <div ng-include="'3pl_wms.html'"></div>
             </div>
         </div>
+    </div>
     </div>
 </body>
 </html>

@@ -1,37 +1,78 @@
+<<<<<<< Updated upstream
 ﻿<div class="outerPanel">
+
 <div style="display: inline-block">
-    <fieldset>
-        <legend>In-Transit</legend>
-        <div ng-controller="InTransitGridCtrl">
-            <div class="grid" style="width: 400px; height: 250px" ng-grid="inTransitGrid">
-            </div>
-        </div>
-    </fieldset>
 
     <fieldset>
-        <legend>Recent Deliveries</legend>
-        <div ng-controller="RecentDeliveriesGridCtrl">
-            <div class="grid" style="width: 400px; height: 200px" ng-grid="recentDeliveriesGrid">
+
+        <legend>In-Transit</legend>
+
+        <div ng-controller="InTransitGridCtrl">
+
+            <div class="grid" id="inTransitGrid" ng-grid="inTransitGrid">
+
             </div>
+
         </div>
+
     </fieldset>
+
+
+
+    <fieldset>
+
+        <legend>Recent Deliveries</legend>
+
+        <div ng-controller="RecentDeliveriesGridCtrl">
+
+            <div class="grid" id="recentDeliveriesGrid" ng-grid="recentDeliveriesGrid">
+
+            </div>
+
+        </div>
+
+    </fieldset>
+
+
 
 </div>
+
 <div style="display: inline-block; vertical-align: top">
 
+
+
     <fieldset>
-        <legend>In/Out</legend>
+
+        <legend style="margin-left: 30px">In/Out</legend>
+
         <div ng-controller="InOutCtrl">
-            <div class="grid" style="width: 400px; height: 150px" ng-grid="inOutGrid">
+
+            <div class="grid" id="inOutGrid" ng-grid="inOutGrid">
+
             </div>
+
         </div>
+
     </fieldset>
+
     <fieldset>
-        <legend>Usage</legend>
+
+        <legend style="margin-left: 30px">Usage</legend>
+
         <div ng-controller="UsageGridCtrl">
-            <div class="grid" style="width: 400px; height: 150px" ng-grid="usageGrid">
+
+            <div class="grid" id="usageGrid" ng-grid="usageGrid">
+
             </div>
+
         </div>
+
     </fieldset>
+
 </div>
+
 </div>
+
+=======
+
+>>>>>>> Stashed changes
